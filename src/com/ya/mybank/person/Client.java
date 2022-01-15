@@ -6,19 +6,31 @@ import java.util.List;
 import com.ya.mybank.account.BankAccount;
 import com.ya.mybank.account.CheckingAccount;
 
+/*
+ * Class that holds data for Client objects
+ * Subclass to Person
+ * Extends all methods & variables from Person
+ * Holds list with clientaccounts
+ * Method that add accounts to accountlist
+ */
 public class Client extends Person {
 
 	private List<BankAccount> accountList = new ArrayList<BankAccount>();
-//	private CheckingAccount account;
 	private int clientNr;
 
+	// Constructor that takes in firstName and lastName as parameters
 	public Client(String firstName, String lastName) {
-		super(firstName, lastName);
+		setFirstName(firstName);
+		setLastName(lastName);
 	}
 
-	// Constructor used for premaking clients
+	/*
+	 * Constructor used for premaking clients takes firstName,lastName, clientNr &
+	 * accountNr as parameters
+	 */
 	public Client(String firstName, String lastName, int clientNr, String AccountNr) {
-		super(firstName, lastName);
+		setFirstName(firstName);
+		setLastName(lastName);
 		this.clientNr = clientNr;
 		accountList.add(new CheckingAccount(AccountNr));
 	}
@@ -26,10 +38,6 @@ public class Client extends Person {
 	public List<BankAccount> getAccountList() {
 		return accountList;
 	}
-
-//	public CheckingAccount getAccount() {
-//		return account;
-//	}
 
 	public int getClientNr() {
 		return clientNr;
@@ -39,6 +47,7 @@ public class Client extends Person {
 		this.clientNr = clientNr;
 	}
 
+	// Method that add accounts to accountlist
 	public void addAccount(BankAccount account) {
 		accountList.add(account);
 	}

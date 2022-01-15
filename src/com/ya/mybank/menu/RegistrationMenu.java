@@ -1,22 +1,26 @@
 package com.ya.mybank.menu;
 
 import com.ya.mybank.bank.Bank;
-import com.ya.mybank.bank.BankConsoleOutput;
 import com.ya.mybank.service.AccountRegistration;
 import com.ya.mybank.service.ClientRegistration;
 import com.ya.mybank.util.ConsoleOutput;
 import com.ya.mybank.util.InputSafetyChecker;
-import com.ya.mybank.util.InputScanner;
 
+/*
+ * Class that contains logic and print
+ * for Registration menu
+ */
 public class RegistrationMenu {
 
-	// neccessary objects
+	// Create services ClientRegistration & AccountRegistration
 	private ClientRegistration clientReg = new ClientRegistration();
 	private AccountRegistration accountReg = new AccountRegistration();
-	
-	// logic for registrationmenu
-	public void runRegMenu(Bank bank, BankConsoleOutput bankPrinter) {
-		
+
+	/* Logic for Registration menu
+	 * Switch/Case Menu
+	 */
+	public void runRegMenu(Bank bank) {
+
 		int menuChoice = 0;
 		while (menuChoice != 3) {
 
@@ -28,7 +32,7 @@ public class RegistrationMenu {
 				clientReg.regCustomer(bank);
 				break;
 			case 2:
-				accountReg.regAccount(bank, bankPrinter);
+				accountReg.regAccount(bank);
 				break;
 			case 3:
 				break;
@@ -39,7 +43,7 @@ public class RegistrationMenu {
 		}
 	}
 
-	// registration menu printout
+	// Method that prints out Registration menu to console
 	private void printRegMenu() {
 		System.out.println("------ REGISTRATION --------");
 		System.out.println("1. Register new client ");
