@@ -44,7 +44,7 @@ public abstract class BankAccount {
 	 * double is >= 0, taking double from balance
 	 */
 	public void withdraw(double sum) {
-		if (sum >= 0 && sum <= balance) {
+		if (sum <= balance && sum >= 0) {
 			balance = balance - sum;
 		} else {
 			throw new IllegalArgumentException("You can't withdraw a negative sum.");

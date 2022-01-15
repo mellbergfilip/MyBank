@@ -27,7 +27,7 @@ public class AccountRegistration {
 		System.out.println("Please enter all necassary information below.\n");
 		System.out.print("Which client do you want to create a new account for?");
 		BankConsoleOutput.printClientNameList(bank);
-		System.out.println("Choice: ");
+		System.out.print("Choice: ");
 		chosenName = InputSafetyChecker.readInt();
 		ConsoleOutput.thankYouPleaseWait();
 		
@@ -49,13 +49,13 @@ public class AccountRegistration {
 			newAccount = new CheckingAccount(accountNr);
 			bank.getClientList().get(chosenName-1).addAccount(newAccount);
 			System.out.println("Done. Account created.\n");
-			System.out.println(newAccount);
+			System.out.println("Type: Checking Account" + "\nAccountnr: " + accountNr);
 		}
 		else if (chosenAccountType == 2) {
 			newAccount = new SavingsAccount(accountNr);
 			bank.getClientList().get(chosenName-1).addAccount(newAccount);
 			System.out.println("Done. Account created.");
-			System.out.println(newAccount);
+			System.out.println("Type: Savings Account" + "\nAccountnr: " + accountNr);
 		}
 		
 		correctInfo = InputSafetyChecker.isThisInfoCorrect();
