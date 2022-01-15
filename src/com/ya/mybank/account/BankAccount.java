@@ -1,19 +1,10 @@
 package com.ya.mybank.account;
 
-public class BankAccount {
+public abstract class BankAccount {
 
-	private String accountNr;
-	private double balance;
+	protected String accountNr;
+	protected double balance;
 
-	public BankAccount() {
-		super();
-	}
-
-	// Constructor used for premaking clients
-	public BankAccount(String accountNr) {
-		super();
-		setAccountNr(accountNr);
-	}
 
 	public String getAccountNr() {
 		return accountNr;
@@ -49,10 +40,4 @@ public class BankAccount {
 			throw new IllegalArgumentException("You can't withdraw a negative sum.");
 		}
 	}
-
-	@Override
-	public String toString() {
-		return "BankAccount: " + accountNr + "\t|\tBalance: " + balance + " $";
-	}
-
 }

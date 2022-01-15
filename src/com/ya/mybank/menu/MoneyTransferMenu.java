@@ -4,6 +4,7 @@ import com.ya.mybank.bank.Bank;
 import com.ya.mybank.bank.BankConsoleOutput;
 import com.ya.mybank.service.MoneyTransfer;
 import com.ya.mybank.util.ConsoleOutput;
+import com.ya.mybank.util.InputSafetyChecker;
 import com.ya.mybank.util.InputScanner;
 
 public class MoneyTransferMenu {
@@ -18,8 +19,7 @@ public class MoneyTransferMenu {
 
 		while (menuChoice != 3) {
 			printMenu2();
-			menuChoice = InputScanner.scan.nextInt();
-			InputScanner.scan.nextLine(); // consume scanner
+			menuChoice = InputSafetyChecker.readInt();
 			ConsoleOutput.dottedLine();
 			switch (menuChoice) {
 			case 1:
