@@ -28,11 +28,11 @@ public class MoneyTransfer {
 			accountNr = InputSafetyChecker.readCorrectAccountNr();
 			doExist = InputSafetyChecker.doExistAccountNr(bank, accountNr);
 		} while (!doExist);
-
+		chosenAccount = findChosenAccount(bank, accountNr);
+		
 		System.out.println("\nHow much do you wish to deposit? ");
 		System.out.print("Enter amount ($): ");
 		sum = InputSafetyChecker.readCorrectDepositSum();
-		chosenAccount = findChosenAccount(bank, accountNr);
 		chosenAccount.deposit(sum);
 		System.out.println("\nDone. " + sum + " $ deposited to accountnumber: " + accountNr + "\n");
 
@@ -43,17 +43,18 @@ public class MoneyTransfer {
 
 		BankConsoleOutput.printClientInfoList2(bank);
 		System.out.println("--------- WITHDRAW ---------");
-		System.out.println("Please enter accountnumber for the account you wish to deposit to.");
+		System.out.println("Please enter accountnumber for the account you wish to withdraw from.");
 		do {
 			System.out.print("Accountnumber: ");
 			accountNr = InputSafetyChecker.readCorrectAccountNr();
 			doExist = InputSafetyChecker.doExistAccountNr(bank, accountNr);
 		} while (!doExist);
-
+		chosenAccount = findChosenAccount(bank, accountNr);
+		double currentBalance = chosenAccount.getBalance();
 		System.out.println("\nHow much do you wish to withdraw? ");
 		System.out.print("Enter amount ($): ");
-		sum = InputSafetyChecker.readCorrectWithdrawSum();
-		chosenAccount = findChosenAccount(bank, accountNr);
+		//reads chosen sum and checks if ok. Takes currentBalance as argument to check if withdrawal is okay
+		sum = InputSafetyChecker.readCorrectWithdrawSum(currentBalance); 
 		chosenAccount.withdraw(sum);
 		System.out.println("\nDone. " + sum + " $ withdrawed from accountnumber: " + accountNr + "\n");
 	}

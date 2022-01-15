@@ -28,6 +28,7 @@ public class Application {
 		tony.getAccountList().get(0).deposit(500000);
 		diana.addAccount(new SavingsAccount("123999-4"));
 		diana.getAccountList().get(0).deposit(10000);
+		diana.getAccountList().get(0).withdraw(1000);
 		bank.addClient(tony);
 		bank.addClient(diana);
 		bank.addClient(steve);
