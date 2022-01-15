@@ -5,6 +5,11 @@ import java.util.List;
 
 import com.ya.mybank.person.Client;
 
+/*
+ * Class that holds data for bank objects
+ * Holds a list with all clients
+ * Method that add clients to list
+ */
 public class Bank {
 
 	private String name, city;
@@ -29,6 +34,7 @@ public class Bank {
 		return clientList;
 	}
 
+	// Method that add clients to list
 	public void addClient(Client newOwner) {
 		clientList.add(newOwner);
 	}

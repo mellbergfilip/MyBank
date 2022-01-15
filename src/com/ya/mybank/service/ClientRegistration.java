@@ -6,8 +6,12 @@ import com.ya.mybank.util.InputScanner;
 import com.ya.mybank.util.ConsoleOutput;
 import com.ya.mybank.util.InputSafetyChecker;
 
+/*
+ * Class that contains logic & input for client registration
+ */
 public class ClientRegistration {
 
+	// Method that takes input from user & add new client to bank
 	public void regCustomer(Bank bank) {
 
 		String firstName, lastName;

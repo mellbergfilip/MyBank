@@ -1,26 +1,20 @@
 package com.ya.mybank.account;
 
+/*
+ * Class that holds data for SavingsAccounts objects
+ * Subclass to BankAccount
+ * Extends all methods & variables from BankAccount
+ * At the moment nothing matters from CheckingAccount
+ * This was just to learn object-oriented thinking
+ */
 public class SavingsAccount extends BankAccount {
 
-	private final double savingsRate = 1.025; // 2.5 %
-	
+	// Constructor that wants accountNr as parameter
 	public SavingsAccount(String accountNr) {
 		super();
 		setAccountNr(accountNr);
 	}
-	
-	@Override
-	public void withdraw(double sum) {
-		if (sum <= balance) {
-			if (sum >= 0) {
-				balance = balance - sum;
-			}
-		}
-		else {
-			throw new IllegalArgumentException("You can't withdraw a negative sum.");
-		}
-	}
-	
+
 	@Override
 	public String toString() {
 		return "\nType: Savings account" + "\nAccountnr: " + accountNr + "\nBalance: " + balance + " $\n";

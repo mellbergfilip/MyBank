@@ -7,23 +7,26 @@ import com.ya.mybank.bank.Bank;
 import com.ya.mybank.bank.BankConsoleOutput;
 import com.ya.mybank.util.ConsoleOutput;
 import com.ya.mybank.util.InputSafetyChecker;
-import com.ya.mybank.util.InputScanner;
 
+/*
+ * Class that contains logic & input for account registration
+ */
 public class AccountRegistration {
 
-	public void regAccount(Bank bank, BankConsoleOutput bankPrinter) {
+	// Method that takes input from user & add new account to client
+	public void regAccount(Bank bank) {
 		
 		String accountNr;
 		int chosenName, chosenAccountType;
 		BankAccount newAccount;
-		boolean correctFormat = false, correctInfo = false;
+		boolean correctInfo = false;
 		
 		do {
 			
 		System.out.println("--- ACCOUNT REGISTRATION ---");
 		System.out.println("Please enter all necassary information below.\n");
 		System.out.print("Which client do you want to create a new account for?");
-		bankPrinter.printClientNameList(bank);
+		BankConsoleOutput.printClientNameList(bank);
 		System.out.println("Choice: ");
 		chosenName = InputSafetyChecker.readInt();
 		ConsoleOutput.thankYouPleaseWait();
@@ -38,12 +41,9 @@ public class AccountRegistration {
 			}
 		} while (chosenAccountType == 1 && chosenAccountType == 2);
 		
-		do {
-			System.out.println("\nEnter accountnumber in this format (123456-7). ");
-			System.out.print("Accountnumber: ");
-			accountNr = InputScanner.scan.nextLine();
-			correctFormat = InputSafetyChecker.isCorrectAccountNr(accountNr);
-		} while (!correctFormat);
+		System.out.println("\nEnter accountnumber in this format (123456-7). ");
+		System.out.print("Accountnumber: ");
+		accountNr = InputSafetyChecker.readCorrectAccountNr();
 		
 		if(chosenAccountType == 1) {
 			newAccount = new CheckingAccount(accountNr);
@@ -54,7 +54,7 @@ public class AccountRegistration {
 		else if (chosenAccountType == 2) {
 			newAccount = new SavingsAccount(accountNr);
 			bank.getClientList().get(chosenName-1).addAccount(newAccount);
-			System.out.println("Done. Account created.\n");
+			System.out.println("Done. Account created.");
 			System.out.println(newAccount);
 		}
 		
