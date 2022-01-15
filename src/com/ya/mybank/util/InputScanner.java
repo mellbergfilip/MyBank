@@ -6,7 +6,7 @@ public class InputScanner {
 
 	public static Scanner scan = new Scanner(System.in);
 
-	// privat konstruktor så objekt ej kan skapas
+	// private constructor so object can't be created
 	private InputScanner() {
 		super();
 	}
