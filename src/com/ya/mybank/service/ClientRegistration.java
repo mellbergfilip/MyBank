@@ -1,9 +1,9 @@
 package com.ya.mybank.service;
 
-import com.ya.mybank.bank.Bank;
+import com.ya.mybank.bank.BankController;
 import com.ya.mybank.person.Client;
 import com.ya.mybank.util.InputScanner;
-import com.ya.mybank.util.ConsoleOutput;
+import com.ya.mybank.util.ConsolePrinter;
 import com.ya.mybank.util.InputSafetyChecker;
 
 /*
@@ -12,10 +12,10 @@ import com.ya.mybank.util.InputSafetyChecker;
 public class ClientRegistration {
 
 	// Method that takes input from user & add new client to bank
-	public void regCustomer(Bank bank) {
+	public void regCustomer(BankController bankController) {
 
 		String firstName, lastName;
-		Client currentClient;
+		Client newClient;
 		boolean correctInfo = false;
 		
 		do {
@@ -26,12 +26,11 @@ public class ClientRegistration {
 			firstName = InputScanner.scan.nextLine();
 			System.out.print("Lastname: ");
 			lastName = InputScanner.scan.nextLine();
-			ConsoleOutput.thankYouPleaseWait();
-			currentClient = new Client(firstName, lastName);
+			ConsolePrinter.thankYouPleaseWait();
+			newClient = new Client(firstName, lastName);
 			System.out.println("Client created.");
-			currentClient.setClientNr(bank.getClientList().size() + 1); // Sets clientNumber to (amount of clients + 1)
-			bank.addClient(currentClient);
-			System.out.println(currentClient);
+			bankController.addClient(newClient);
+			bankController.printClientInfo(newClient);
 			correctInfo = InputSafetyChecker.isThisInfoCorrect();
 			
 		} while (!correctInfo);

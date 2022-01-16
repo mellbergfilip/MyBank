@@ -1,8 +1,6 @@
 package com.ya.mybank.util;
 
 import com.ya.mybank.account.CheckingAccount;
-import com.ya.mybank.bank.Bank;
-import com.ya.mybank.person.Client;
 
 /*
  * Class with static methods,
@@ -36,7 +34,7 @@ public class InputSafetyChecker {
 		boolean correctFormat = false;
 		try {
 			tempAccount.setAccountNr(accountNr);
-			ConsoleOutput.thankYouPleaseWait();
+			ConsolePrinter.thankYouPleaseWait();
 			return correctFormat = true;
 		} catch (Exception e) {
 
@@ -50,7 +48,7 @@ public class InputSafetyChecker {
 	public static double readCorrectDepositSum() {
 		double chosenSum = InputScanner.scan.nextDouble();
 		while (!isCorrectDepositSum(chosenSum)) {
-			ConsoleOutput.thankYouPleaseWait();
+			ConsolePrinter.thankYouPleaseWait();
 			System.out.println("\nYou can't deposit a negative sum. Try again.");
 			System.out.print("Enter amount ($): ");
 			chosenSum = InputScanner.scan.nextDouble();
@@ -68,7 +66,7 @@ public class InputSafetyChecker {
 		boolean correctFormat = false;
 		try {
 			tempAccount.deposit(sum);
-			ConsoleOutput.thankYouPleaseWait();
+			ConsolePrinter.thankYouPleaseWait();
 			return correctFormat = true;
 		} catch (Exception e) {
 
@@ -82,7 +80,7 @@ public class InputSafetyChecker {
 	public static double readCorrectWithdrawSum() {
 		double chosenSum = InputScanner.scan.nextDouble();
 		while (!isCorrectWithdrawSum(chosenSum)) {
-			ConsoleOutput.thankYouPleaseWait();
+			ConsolePrinter.thankYouPleaseWait();
 			System.out.println("\nYou can't withdraw more than you have or a negative sum.");
 			System.out.print("Enter amount ($): ");
 			chosenSum = InputScanner.scan.nextDouble();
@@ -100,29 +98,12 @@ public class InputSafetyChecker {
 		boolean correctFormat = false;
 		try {
 			tempAccount.withdraw(sum);
-			ConsoleOutput.thankYouPleaseWait();
+			ConsolePrinter.thankYouPleaseWait();
 			return correctFormat = true;
 		} catch (Exception e) {
 			
 		}
 		return correctFormat;
-	}
-
-	/* 
-	 * Method that checks if accountNr already exists within bank clients
-	 * Return true or false
-	 */
-	public static boolean doExistAccountNr(Bank bank, String accountNr) {
-		boolean doExist = false;
-		for (Client client : bank.getClientList()) {
-			for (int i = 0; i < client.getAccountList().size(); i++) {
-				if (accountNr.equals(client.getAccountList().get(i).getAccountNr())) {
-					return doExist = true;
-				}
-			}
-		}
-		System.out.println("\nThe number you have entered does not exist. Please try again:");
-		return doExist;
 	}
 
 	/*

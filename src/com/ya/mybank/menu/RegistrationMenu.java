@@ -1,9 +1,10 @@
 package com.ya.mybank.menu;
 
 import com.ya.mybank.bank.Bank;
+import com.ya.mybank.bank.BankController;
 import com.ya.mybank.service.AccountRegistration;
 import com.ya.mybank.service.ClientRegistration;
-import com.ya.mybank.util.ConsoleOutput;
+import com.ya.mybank.util.ConsolePrinter;
 import com.ya.mybank.util.InputSafetyChecker;
 
 /*
@@ -19,20 +20,20 @@ public class RegistrationMenu {
 	/* Logic for Registration menu
 	 * Switch/Case Menu
 	 */
-	public void runRegMenu(Bank bank) {
+	public void runRegMenu(BankController bankController) {
 
 		int menuChoice = 0;
 		while (menuChoice != 3) {
 
 			printRegMenu();
 			menuChoice = InputSafetyChecker.readInt();
-			ConsoleOutput.dottedLine();
+			ConsolePrinter.dottedLine();
 			switch (menuChoice) {
 			case 1:
-				clientReg.regCustomer(bank);
+				clientReg.regCustomer(bankController);
 				break;
 			case 2:
-				accountReg.regAccount(bank);
+				accountReg.regAccount(bankController);
 				break;
 			case 3:
 				break;

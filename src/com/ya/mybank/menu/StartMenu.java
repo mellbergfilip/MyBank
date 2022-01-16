@@ -1,8 +1,7 @@
 package com.ya.mybank.menu;
 
-import com.ya.mybank.bank.Bank;
-import com.ya.mybank.bank.BankConsoleOutput;
-import com.ya.mybank.util.ConsoleOutput;
+import com.ya.mybank.bank.BankController;
+import com.ya.mybank.util.ConsolePrinter;
 import com.ya.mybank.util.InputSafetyChecker;
 
 /*
@@ -18,26 +17,26 @@ public class StartMenu {
 	/* Logic for start menu
 	 * Switch/Case Menu
 	 */
-	public void runStartMenu(Bank bank) {
+	public void runStartMenu(BankController bankController) {
 		int menuChoice = 0;
 
 		while (menuChoice != 4) {
 
 			printStartMenu();
 			menuChoice = InputSafetyChecker.readInt();
-			ConsoleOutput.dottedLine();
+			ConsolePrinter.dottedLine();
 			switch (menuChoice) {
 			case 1:
-				BankConsoleOutput.printClientInfoList2(bank);
+				bankController.PrintClientInfoList();
 				break;
 			case 2:
-				regMenu.runRegMenu(bank);
+				regMenu.runRegMenu(bankController);
 				break;
 			case 3:
-				transferMenu.runMoneyTransferMenu(bank);
+				transferMenu.runMoneyTransferMenu(bankController);
 				break;
 			case 4:
-				ConsoleOutput.shuttingDown();
+				ConsolePrinter.shuttingDown();
 				System.exit(0);
 				break;
 			default:

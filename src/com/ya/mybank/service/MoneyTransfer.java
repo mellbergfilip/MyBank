@@ -1,8 +1,9 @@
 package com.ya.mybank.service;
 
+import java.util.List;
+
 import com.ya.mybank.account.BankAccount;
-import com.ya.mybank.bank.Bank;
-import com.ya.mybank.bank.BankConsoleOutput;
+import com.ya.mybank.bank.BankController;
 import com.ya.mybank.person.Client;
 import com.ya.mybank.util.InputSafetyChecker;
 
@@ -15,60 +16,63 @@ public class MoneyTransfer {
 	private BankAccount chosenAccount;
 	private String accountNr;
 	private double sum;
-	private boolean doExist = false;
 
 	// Method that takes input from user & deposit chosen sum to chosen account
-	public void depositToChosenAccount(Bank bank) {
+	public void depositToChosenAccount(BankController bankController) {
 
-		BankConsoleOutput.printClientInfoList2(bank);
+		bankController.PrintClientInfoList();
 		System.out.println("-------- DEPOSIT -----------");
 		System.out.println("Please enter accountnumber for the account you wish to deposit to.");
 		do {
 			System.out.print("Accountnumber: ");
 			accountNr = InputSafetyChecker.readCorrectAccountNr();
-			doExist = InputSafetyChecker.doExistAccountNr(bank, accountNr);
-		} while (!doExist);
-		chosenAccount = findChosenAccount(bank, accountNr);
-		
+			chosenAccount = findChosenAccount(bankController.getBankClientList(), accountNr);
+			;
+		} while (chosenAccount == null);
+
 		System.out.println("\nHow much do you wish to deposit? ");
 		System.out.print("Enter amount ($): ");
 		sum = InputSafetyChecker.readCorrectDepositSum();
-		chosenAccount.deposit(sum);
+		bankController.depositToAccount(accountNr, sum);
 		System.out.println("\nDone. " + sum + " $ deposited to accountnumber: " + accountNr + "\n");
 
 	}
 
 	// Method that takes input from user & withdraw chosen sum from chosen account
-	public void withdrawFromChosenAccount(Bank bank) {
+	public void withdrawFromChosenAccount(BankController bankController) {
 
-		BankConsoleOutput.printClientInfoList2(bank);
+		bankController.PrintClientInfoList();
+		;
 		System.out.println("--------- WITHDRAW ---------");
 		System.out.println("Please enter accountnumber for the account you wish to withdraw from.");
 		do {
 			System.out.print("Accountnumber: ");
 			accountNr = InputSafetyChecker.readCorrectAccountNr();
-			doExist = InputSafetyChecker.doExistAccountNr(bank, accountNr);
-		} while (!doExist);
-		chosenAccount = findChosenAccount(bank, accountNr);
+			chosenAccount = findChosenAccount(bankController.getBankClientList(), accountNr);
+			;
+		} while (chosenAccount == null);
+
 		double currentBalance = chosenAccount.getBalance();
+
 		System.out.println("\nHow much do you wish to withdraw? ");
 		System.out.print("Enter amount ($): ");
-		sum = InputSafetyChecker.readCorrectWithdrawSum(); 
-		
+		sum = InputSafetyChecker.readCorrectWithdrawSum();
+
 		while (!checkIfEnoughMoney(sum, currentBalance)) {
 			System.out.println("\nIt is not enough money on the account. Please try again:");
 			System.out.print("Enter amount ($): ");
-			sum = InputSafetyChecker.readCorrectWithdrawSum(); 
+			sum = InputSafetyChecker.readCorrectWithdrawSum();
 		}
-		chosenAccount.withdraw(sum);
+
+		bankController.withdrawFromAccount(accountNr, sum);
 		System.out.println("\nDone. " + sum + " $ withdrawed from accountnumber: " + accountNr + "\n");
 	}
 
-	// Method that search for chosen bankAccount and return it
-	private BankAccount findChosenAccount(Bank bank, String accountNr) {
+	// Method that search for bankAccount in a list of clients and return it
+	private BankAccount findChosenAccount(List<Client> clientList, String accountNr) {
 		BankAccount chosenAccount;
 
-		for (Client client : bank.getClientList()) {
+		for (Client client : clientList) {
 			for (int j = 0; j < client.getAccountList().size(); j++) {
 				if (accountNr.equals(client.getAccountList().get(j).getAccountNr())) {
 					chosenAccount = client.getAccountList().get(j);
@@ -76,18 +80,18 @@ public class MoneyTransfer {
 				}
 			}
 		}
-		return bank.getClientList().get(0).getAccountList().get(0);
+		System.out.println("\nCouldn't find accountnumber.");
+		return null;
 	}
-	
-	/* 
-	 * Method that checks if there is enough money on balance
-	 * Takes chosen sum and current balance as parameters
+
+	/*
+	 * Method that checks if there is enough money on balance Takes chosen sum and
+	 * current balance as parameters
 	 */
 	private boolean checkIfEnoughMoney(double sum, double balance) {
 		if (sum <= balance) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}

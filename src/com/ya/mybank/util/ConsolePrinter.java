@@ -1,16 +1,14 @@
 package com.ya.mybank.util;
 
-import com.ya.mybank.bank.Bank;
-
 /*
  * Class with static methods,
  * that prints out different various
  * console prints for display
  */
-public class ConsoleOutput {
+public class ConsolePrinter {
 
 	// Private constructor so object can't be created
-	private ConsoleOutput() {
+	private ConsolePrinter() {
 		super();
 	}
 
@@ -59,11 +57,6 @@ public class ConsoleOutput {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	// Method that prints out "Welcome to bankname & city"
-	public static void welcomeMessage(Bank bank) {
-		System.out.println("Welcome to " + bank.getName() + "! The best bank in " + bank.getCity() + ".\n");
 	}
 	
 	// Method that prints out long line after printed menu
