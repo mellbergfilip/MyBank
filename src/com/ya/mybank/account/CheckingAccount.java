@@ -1,11 +1,12 @@
 package com.ya.mybank.account;
 
 /*
- * Class that holds data for CheckingAccount objects
+ * Model class that represent checking account
  * Subclass to BankAccount
  * Extends all methods & variables from BankAccount
- * At the moment nothing matters from SavingsAccount
- * This was just to learn object-oriented thinking
+ * Right now there is no difference from BankAccount
+ * This was just to learn more about object-oriented
+ * programming and Java
  */
 public class CheckingAccount extends BankAccount {
 

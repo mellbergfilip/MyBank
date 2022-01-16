@@ -6,6 +6,14 @@ import com.ya.mybank.account.CheckingAccount;
 import com.ya.mybank.account.SavingsAccount;
 import com.ya.mybank.person.Client;
 
+/*
+ * Controller class for bank
+ * Controls the flow of all data within bank,
+ * and also the BankView class
+ * Various methods like addClient(),
+ * addAccountToClient(), deposit(), withdraw()
+ * Also updates/runs all the printMethods in view class
+ */
 public class BankController {
 
 	private Bank bank;
@@ -46,7 +54,9 @@ public class BankController {
 	}
 
 	/*
-	 * Method that takes double as parameter, controls if double is >= 0, adding
+	 * Method that takes double and accountNR as parameter,
+	 * search correct account first, 
+	 * then controls if double is >= 0, adding
 	 * double to balance
 	 */
 	public void depositToAccount(String accountNr, double sum) {
@@ -61,7 +71,9 @@ public class BankController {
 	}
 
 	/*
-	 * Method that takes a double as parameter, controls if double is >= 0, taking
+	 * Method that takes double and accountNR as parameter,
+	 * search correct account first, 
+	 * then controls if double is >= 0, withdrawing
 	 * double from balance
 	 */
 	public void withdrawFromAccount(String accountNr, double sum) {

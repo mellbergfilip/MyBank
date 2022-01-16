@@ -6,9 +6,12 @@ import java.util.List;
 import com.ya.mybank.person.Client;
 
 /*
- * Class that holds data for bank objects
+ * Model class that represent bank
  * Holds a list with all clients
  * Method that add clients to list
+ * Right now there is very little data in this class
+ * This was just to learn more about object-oriented
+ * programming and Java
  */
 public class Bank {
 

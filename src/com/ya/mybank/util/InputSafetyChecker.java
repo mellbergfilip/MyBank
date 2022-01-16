@@ -4,7 +4,8 @@ import com.ya.mybank.account.CheckingAccount;
 
 /*
  * Class with static methods,
- * that handle different kinds of incorrect input from user
+ * that read different kinds of input from user,
+ * and handle incorrect input
  */
 public class InputSafetyChecker {
 

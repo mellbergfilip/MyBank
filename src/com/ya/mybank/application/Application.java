@@ -7,20 +7,17 @@ import com.ya.mybank.menu.StartMenu;
 import com.ya.mybank.person.Client;
 
 /*
- * Class that objects the application,
+ * Class that represents the whole application,
  * and runs the overall logic
  */
 public class Application {
 
-	// Create bank object and start menu object
-//	private Bank bank = new Bank("Banken", "Sundsvall");
-	private StartMenu menu = new StartMenu();
-	
-	//test
+	// Create bank, controller and start menu
 	private Bank bank = new Bank("Banken", "Sundsvall");
 	private BankView bankView = new BankView();
 	private BankController bankController = new BankController(bank, bankView);
-
+	private StartMenu menu = new StartMenu();
+	
 	// Overall application logic
 	public void runApp() {
 

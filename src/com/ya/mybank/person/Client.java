@@ -7,18 +7,24 @@ import com.ya.mybank.account.BankAccount;
 import com.ya.mybank.account.CheckingAccount;
 
 /*
- * Class that holds data for Client objects
+ * Model class that represent Client
  * Subclass to Person
  * Extends all methods & variables from Person
  * Holds list with clientaccounts
  * Method that add accounts to accountlist
+ * Right now there is very little data in this class
+ * This was just to learn more about object-oriented
+ * programming and Java
  */
 public class Client extends Person {
 
 	private List<BankAccount> accountList = new ArrayList<BankAccount>();
 	private int clientNr;
 
-	// Constructor that takes in firstName and lastName as parameters
+	/*
+	 * Constructor that takes in firstName and lastName as parameters
+	 * Used for client registration
+	 */
 	public Client(String firstName, String lastName) {
 		setFirstName(firstName);
 		setLastName(lastName);
