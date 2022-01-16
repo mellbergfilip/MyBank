@@ -28,11 +28,10 @@ public class Client extends Person {
 	 * Constructor used for premaking clients takes firstName,lastName, clientNr &
 	 * accountNr as parameters
 	 */
-	public Client(String firstName, String lastName, int clientNr, String AccountNr) {
+	public Client(String firstName, String lastName, String accountNr) {
 		setFirstName(firstName);
 		setLastName(lastName);
-		this.clientNr = clientNr;
-		accountList.add(new CheckingAccount(AccountNr));
+		accountList.add(new CheckingAccount(accountNr));
 	}
 
 	public List<BankAccount> getAccountList() {

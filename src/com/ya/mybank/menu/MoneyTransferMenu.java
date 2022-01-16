@@ -1,8 +1,8 @@
 package com.ya.mybank.menu;
 
-import com.ya.mybank.bank.Bank;
+import com.ya.mybank.bank.BankController;
 import com.ya.mybank.service.MoneyTransfer;
-import com.ya.mybank.util.ConsoleOutput;
+import com.ya.mybank.util.ConsolePrinter;
 import com.ya.mybank.util.InputSafetyChecker;
 
 /*
@@ -17,20 +17,20 @@ public class MoneyTransferMenu {
 	/* Logic for MoneyTransfer menu
 	 * Switch/Case Menu
 	 */
-	public void runMoneyTransferMenu(Bank bank) {
+	public void runMoneyTransferMenu(BankController bankController) {
 
 		int menuChoice = 0;
 
 		while (menuChoice != 3) {
 			printMenu2();
 			menuChoice = InputSafetyChecker.readInt();
-			ConsoleOutput.dottedLine();
+			ConsolePrinter.dottedLine();
 			switch (menuChoice) {
 			case 1:
-				moneyTransfer.depositToChosenAccount(bank);
+				moneyTransfer.depositToChosenAccount(bankController);
 				break;
 			case 2:
-				moneyTransfer.withdrawFromChosenAccount(bank);
+				moneyTransfer.withdrawFromChosenAccount(bankController);
 				break;
 			case 3:
 				break;

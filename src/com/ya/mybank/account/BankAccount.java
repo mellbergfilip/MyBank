@@ -26,6 +26,10 @@ public abstract class BankAccount {
 	public double getBalance() {
 		return balance;
 	}
+	
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
 
 	/*
 	 * Method that takes double as parameter, controls if double is >= 0, 
