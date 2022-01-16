@@ -12,7 +12,7 @@ Potential story could be an employee using this application for registration and
 * Withdraw money from accounts
 
 ### Purpose & Motivation
-A sideproject to learn more about object-oriented programming and Java meanwhile studying an OOP-course. 
+A sideproject to learn more about object-oriented programming, design patterns and Java meanwhile studying an OOP-course. 
 
 ### Used techniques
 - Java
