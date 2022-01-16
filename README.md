@@ -1,4 +1,4 @@
-# OnlineBank
+# MyBank
 
 ## Description
 A console application that simulates a bank with very simple functions. 
