@@ -1,5 +1,4 @@
 # OnlineBank
-A sideproject to learn more about object-oriented programming and Java meanwhile studying an OOP-course.
 
 ## Description
 A console application that simulates a bank with very simple functions. 
