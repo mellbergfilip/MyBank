@@ -28,8 +28,8 @@ public abstract class BankAccount {
 	}
 
 	/*
-	 * Method that takes double as parameter, controls if double is >= 0, adding
-	 * double to balance
+	 * Method that takes double as parameter, controls if double is >= 0, 
+	 * adding double to balance
 	 */
 	public void deposit(double sum) {
 		if (sum >= 0) {
@@ -40,11 +40,11 @@ public abstract class BankAccount {
 	}
 
 	/*
-	 * Method that takes a double as parameter, controls if double is <= balance and
+	 * Method that takes a double as parameter, controls if
 	 * double is >= 0, taking double from balance
 	 */
 	public void withdraw(double sum) {
-		if (sum <= balance && sum >= 0) {
+		if (sum >= 0) {
 			balance = balance - sum;
 		} else {
 			throw new IllegalArgumentException("You can't withdraw a negative sum.");
