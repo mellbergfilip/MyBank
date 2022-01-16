@@ -44,7 +44,9 @@ public class InputSafetyChecker {
 		return correctFormat;
 	}
 
-	// Methods that read depositsum and loop until correct format
+	/*
+	 *  Methods that read depositsum and loop until correct format
+	 */
 	public static double readCorrectDepositSum() {
 		double chosenSum = InputScanner.scan.nextDouble();
 		while (!isCorrectDepositSum(chosenSum)) {
@@ -76,12 +78,10 @@ public class InputSafetyChecker {
 
 	/* 
 	 * Methods that read withdraw sum and loop until correct format
-	 * takes in current balance from chosen account
-	 * to see if sum is less than current balance
 	 */
-	public static double readCorrectWithdrawSum(double currentBalance) {
+	public static double readCorrectWithdrawSum() {
 		double chosenSum = InputScanner.scan.nextDouble();
-		while (!isCorrectWithdrawSum(chosenSum, currentBalance)) {
+		while (!isCorrectWithdrawSum(chosenSum)) {
 			ConsoleOutput.thankYouPleaseWait();
 			System.out.println("\nYou can't withdraw more than you have or a negative sum.");
 			System.out.print("Enter amount ($): ");
@@ -95,12 +95,11 @@ public class InputSafetyChecker {
 	 * Return true or false
 	 * Method used in readCorrectWithdrawSum()
 	 */
-	private static boolean isCorrectWithdrawSum(double sum, double balance) {
+	private static boolean isCorrectWithdrawSum(double sum) {
 		CheckingAccount tempAccount = new CheckingAccount("111111-5");
-		tempAccount.deposit(balance);
 		boolean correctFormat = false;
 		try {
-			tempAccount.withdraw(1000);
+			tempAccount.withdraw(sum);
 			ConsoleOutput.thankYouPleaseWait();
 			return correctFormat = true;
 		} catch (Exception e) {

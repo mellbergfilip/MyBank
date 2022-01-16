@@ -53,8 +53,13 @@ public class MoneyTransfer {
 		double currentBalance = chosenAccount.getBalance();
 		System.out.println("\nHow much do you wish to withdraw? ");
 		System.out.print("Enter amount ($): ");
-		//reads chosen sum and checks if ok. Takes currentBalance as argument to check if withdrawal is okay
-		sum = InputSafetyChecker.readCorrectWithdrawSum(currentBalance); 
+		sum = InputSafetyChecker.readCorrectWithdrawSum(); 
+		
+		while (!checkIfEnoughMoney(sum, currentBalance)) {
+			System.out.println("\nIt is not enough money on the account. Please try again:");
+			System.out.print("Enter amount ($): ");
+			sum = InputSafetyChecker.readCorrectWithdrawSum(); 
+		}
 		chosenAccount.withdraw(sum);
 		System.out.println("\nDone. " + sum + " $ withdrawed from accountnumber: " + accountNr + "\n");
 	}
@@ -72,5 +77,18 @@ public class MoneyTransfer {
 			}
 		}
 		return bank.getClientList().get(0).getAccountList().get(0);
+	}
+	
+	/* 
+	 * Method that checks if there is enough money on balance
+	 * Takes chosen sum and current balance as parameters
+	 */
+	private boolean checkIfEnoughMoney(double sum, double balance) {
+		if (sum <= balance) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 }
