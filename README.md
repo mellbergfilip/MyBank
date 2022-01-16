@@ -2,7 +2,7 @@
 
 ## Description
 A console application that simulates a bank with very simple functions. 
-Potential story could be an employee using this application for registrations and transactions.
+Potential story could be an employee using this application for registration and transaction purposes.
 
 #### Functions
 * View clients
@@ -17,4 +17,5 @@ A sideproject to learn more about object-oriented programming and Java meanwhile
 ### Used techniques
 - Java
 - Git
+- Object-oriented programming
 - MVC design pattern
