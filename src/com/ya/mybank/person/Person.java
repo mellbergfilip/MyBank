@@ -1,8 +1,11 @@
 package com.ya.mybank.person;
 
 /*
- * Abstract class that holds data for Person objects
+ * Abstract model class that represents Person
  * Baseclass to Client
+ * Right now there is very little data in this class
+ * This was just to learn more about object-oriented
+ * programming and Java
  */
 public abstract class Person {
 

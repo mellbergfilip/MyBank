@@ -6,8 +6,8 @@ import com.ya.mybank.util.ConsolePrinter;
 import com.ya.mybank.util.InputSafetyChecker;
 
 /*
- * Class that contains logic and print
- * for MoneyTransfer menu
+ * Class that contains methods for logic and console print
+ * in MoneyTransfer menu
  */
 public class MoneyTransferMenu {
 

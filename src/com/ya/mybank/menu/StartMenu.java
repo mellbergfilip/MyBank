@@ -5,8 +5,8 @@ import com.ya.mybank.util.ConsolePrinter;
 import com.ya.mybank.util.InputSafetyChecker;
 
 /*
- * Class that contains logic and print
- * for start menu
+ * Class that contains methods for logic and console print
+ * in start menu
  */
 public class StartMenu {
 

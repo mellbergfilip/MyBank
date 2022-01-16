@@ -5,6 +5,11 @@ import java.util.List;
 import com.ya.mybank.account.BankAccount;
 import com.ya.mybank.person.Client;
 
+/*
+ * View class that has
+ * various methods for printing
+ * information related to bank
+ */
 public class BankView {
 
 	// Method that prints out clientlist, clientinfo (account, nr, name) to console

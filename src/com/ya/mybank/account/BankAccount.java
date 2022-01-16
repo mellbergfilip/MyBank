@@ -1,9 +1,12 @@
 package com.ya.mybank.account;
 
 /*
- * Abstract class that holds data for bankAccount objects
- * Baseclass to CheckingAccount and SavingsAccount
+ * Abstract model class that represents bank accounts
+ * Baseclass to checking account and savings account
  * Withdraw/Deposit methods to manipulate balance
+ * Right now there is very little data in this class
+ * This was just to learn more about object-oriented
+ * programming and Java
  */
 public abstract class BankAccount {
 
@@ -14,7 +17,7 @@ public abstract class BankAccount {
 		return accountNr;
 	}
 
-	// Setmethod that checks if accountNr is correct length (8)
+	// Setmethod that controls if accountNr is correct length (8)
 	public void setAccountNr(String accountNr) {
 		if (accountNr.length() == 8) {
 			this.accountNr = accountNr;

@@ -8,7 +8,7 @@ import com.ya.mybank.person.Client;
 import com.ya.mybank.util.InputSafetyChecker;
 
 /*
- * Class that contains logic & input for money transfer
+ * Class with methods for logic & input related to money transfer
  */
 public class MoneyTransfer {
 

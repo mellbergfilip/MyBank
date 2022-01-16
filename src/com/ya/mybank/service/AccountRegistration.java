@@ -6,7 +6,7 @@ import com.ya.mybank.util.ConsolePrinter;
 import com.ya.mybank.util.InputSafetyChecker;
 
 /*
- * Class that contains logic & input for account registration
+ * Class with methods for logic & input related to account registration
  */
 public class AccountRegistration {
 

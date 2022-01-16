@@ -1,6 +1,5 @@
 package com.ya.mybank.menu;
 
-import com.ya.mybank.bank.Bank;
 import com.ya.mybank.bank.BankController;
 import com.ya.mybank.service.AccountRegistration;
 import com.ya.mybank.service.ClientRegistration;
@@ -8,8 +7,8 @@ import com.ya.mybank.util.ConsolePrinter;
 import com.ya.mybank.util.InputSafetyChecker;
 
 /*
- * Class that contains logic and print
- * for Registration menu
+ * Class that contains methods for logic and console print
+ * in registration menu
  */
 public class RegistrationMenu {
 
