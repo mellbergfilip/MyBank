@@ -1,24 +1,16 @@
 package com.ya.mybank.bank;
 
+import java.util.List;
+
 import com.ya.mybank.account.BankAccount;
 import com.ya.mybank.person.Client;
 
-/*
- * Class with static methods,
- * that prints out various bankinformation
- * to console
- */
-public class BankConsoleOutput {
-
-	// Private constructor so object can't be created
-	private BankConsoleOutput() {
-		super();
-	}
+public class BankView {
 
 	// Method that prints out clientlist, clientinfo (account, nr, name) to console
-	public static void printClientInfoList2(Bank bank) {
+	public void printClientInfoList(List<Client> clientList) {
 		System.out.println("------ CLIENTLIST ----------");
-		for (Client client : bank.getClientList()) {
+		for (Client client : clientList) {
 			System.out.println("----------------------------\n" + "Name: " + client.getFirstName() + " "
 					+ client.getLastName() + "\nClientNumber: " + client.getClientNr());
 			for (BankAccount account : client.getAccountList()) {
@@ -30,13 +22,23 @@ public class BankConsoleOutput {
 	}
 
 	// Method that prints out clientlist (only names) to console
-	public static void printClientNameList(Bank bank) {
+	public void printClientNameList(List<Client> clientList) {
 		int i = 1;
 		System.out.println("\n------ CLIENTLIST ----------");
-		for (Client client : bank.getClientList()) {
+		for (Client client : clientList) {
 			System.out.println(i + ". " + client.getFirstName() + " " + client.getLastName());
 			i++;
 		}
 	}
 
+	// Method that prints out clientInfo to console
+	public void printClientInfo(String firstName, String lastName) {
+		System.out.println("\n------ CLIENT INFO ----------");
+		System.out.println("Name:" + firstName + " " + lastName);
+	}
+
+	// Method that prints out "Welcome to bankname & city"
+	public void printWelcomeMessage(String name, String city) {
+		System.out.println("Welcome to " + name + "! The best bank in " + city + ".\n");
+	}
 }
