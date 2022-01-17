@@ -1,9 +1,9 @@
-package com.ya.mybank.bank;
+package com.fm.mybank.bank;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ya.mybank.person.Client;
+import com.fm.mybank.person.Client;
 
 /*
  * Model class that represent bank

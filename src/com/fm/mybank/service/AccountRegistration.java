@@ -1,9 +1,9 @@
-package com.ya.mybank.service;
+package com.fm.mybank.service;
 
-import com.ya.mybank.bank.BankController;
-import com.ya.mybank.person.Client;
-import com.ya.mybank.util.ConsolePrinter;
-import com.ya.mybank.util.InputSafetyChecker;
+import com.fm.mybank.bank.BankController;
+import com.fm.mybank.person.Client;
+import com.fm.mybank.util.ConsolePrinter;
+import com.fm.mybank.util.InputSafetyChecker;
 
 /*
  * Class with methods for logic & input related to account registration

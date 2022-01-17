@@ -1,4 +1,4 @@
-package com.ya.mybank.person;
+package com.fm.mybank.person;
 
 /*
  * Abstract model class that represents Person

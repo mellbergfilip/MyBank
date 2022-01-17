@@ -1,10 +1,10 @@
-package com.ya.mybank.bank;
+package com.fm.mybank.bank;
 
 import java.util.List;
 
-import com.ya.mybank.account.CheckingAccount;
-import com.ya.mybank.account.SavingsAccount;
-import com.ya.mybank.person.Client;
+import com.fm.mybank.account.CheckingAccount;
+import com.fm.mybank.account.SavingsAccount;
+import com.fm.mybank.person.Client;
 
 /*
  * Controller class for bank

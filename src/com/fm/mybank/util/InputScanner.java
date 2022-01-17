@@ -1,4 +1,4 @@
-package com.ya.mybank.util;
+package com.fm.mybank.util;
 
 import java.util.Scanner;
 

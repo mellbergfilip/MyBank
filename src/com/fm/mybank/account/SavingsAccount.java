@@ -1,4 +1,4 @@
-package com.ya.mybank.account;
+package com.fm.mybank.account;
 
 /*
  * Model class that represent savings account

@@ -1,10 +1,10 @@
-package com.ya.mybank.application;
+package com.fm.mybank.application;
 
-import com.ya.mybank.bank.Bank;
-import com.ya.mybank.bank.BankController;
-import com.ya.mybank.bank.BankView;
-import com.ya.mybank.menu.StartMenu;
-import com.ya.mybank.person.Client;
+import com.fm.mybank.bank.Bank;
+import com.fm.mybank.bank.BankController;
+import com.fm.mybank.bank.BankView;
+import com.fm.mybank.menu.StartMenu;
+import com.fm.mybank.person.Client;
 
 /*
  * Class that represents the whole application,

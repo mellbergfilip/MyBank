@@ -1,9 +1,9 @@
-package com.ya.mybank.menu;
+package com.fm.mybank.menu;
 
-import com.ya.mybank.bank.BankController;
-import com.ya.mybank.service.MoneyTransfer;
-import com.ya.mybank.util.ConsolePrinter;
-import com.ya.mybank.util.InputSafetyChecker;
+import com.fm.mybank.bank.BankController;
+import com.fm.mybank.service.MoneyTransfer;
+import com.fm.mybank.util.ConsolePrinter;
+import com.fm.mybank.util.InputSafetyChecker;
 
 /*
  * Class that contains methods for logic and console print

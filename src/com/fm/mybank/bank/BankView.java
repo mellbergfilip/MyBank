@@ -1,9 +1,9 @@
-package com.ya.mybank.bank;
+package com.fm.mybank.bank;
 
 import java.util.List;
 
-import com.ya.mybank.account.BankAccount;
-import com.ya.mybank.person.Client;
+import com.fm.mybank.account.BankAccount;
+import com.fm.mybank.person.Client;
 
 /*
  * View class that has

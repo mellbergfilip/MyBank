@@ -1,11 +1,11 @@
-package com.ya.mybank.service;
+package com.fm.mybank.service;
 
 import java.util.List;
 
-import com.ya.mybank.account.BankAccount;
-import com.ya.mybank.bank.BankController;
-import com.ya.mybank.person.Client;
-import com.ya.mybank.util.InputSafetyChecker;
+import com.fm.mybank.account.BankAccount;
+import com.fm.mybank.bank.BankController;
+import com.fm.mybank.person.Client;
+import com.fm.mybank.util.InputSafetyChecker;
 
 /*
  * Class with methods for logic & input related to money transfer

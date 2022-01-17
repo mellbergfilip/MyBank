@@ -1,6 +1,6 @@
-package com.ya.mybank.util;
+package com.fm.mybank.util;
 
-import com.ya.mybank.account.CheckingAccount;
+import com.fm.mybank.account.CheckingAccount;
 
 /*
  * Class with static methods,

@@ -1,4 +1,4 @@
-package com.ya.mybank.application;
+package com.fm.mybank.application;
 
 public class Main {
 

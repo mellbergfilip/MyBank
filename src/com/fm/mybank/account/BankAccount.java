@@ -1,4 +1,4 @@
-package com.ya.mybank.account;
+package com.fm.mybank.account;
 
 /*
  * Abstract model class that represents bank accounts

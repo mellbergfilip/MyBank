@@ -1,10 +1,10 @@
-package com.ya.mybank.person;
+package com.fm.mybank.person;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ya.mybank.account.BankAccount;
-import com.ya.mybank.account.CheckingAccount;
+import com.fm.mybank.account.BankAccount;
+import com.fm.mybank.account.CheckingAccount;
 
 /*
  * Model class that represent Client
